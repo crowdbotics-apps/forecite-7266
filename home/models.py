@@ -5,28 +5,31 @@ from django.db import models
 from django.db import models
 
 
-class CustomText(models.Model):
-    title = models.CharField(max_length=150)
+class Review(models.Model):
+    employee_type = models.CharField(max_length=20)
+    employment_year = models.CharField(max_length=50)
+    salary = models.IntegerField(default=0)
+    submission = models.ForeignKey(Demograph, related_name='submission', on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.title
+        return self.employee_type
 
-    @property
-    def api(self):
-        return f'/api/v1/customtext/{self.id}/'
+class Demograph(models.Model):
+    gender = models.CharField(max_length=10)
+    racial_group = models.CharField(max_length=50)
 
-    @property
-    def field(self):
-        return 'title'
+class Interview(models.Model):
+    submission = models.ForeignKey(Demograph, related_name='submission', on_delete=models.CASCADE)
 
+class Rating(models.Model):
+    review = models.ForeignKey(Review, related_name='review', on_delete=models.CASCADE)
 
-class HomePage(models.Model):
-    body = models.TextField()
+class Recommend(models.Model):
+    interview = models.ForeignKey(Interview, related_name='interview', on_delete=models.CASCADE)
 
-    @property
-    def api(self):
-        return f'/api/v1/homepage/{self.id}/'
+class InterviewFormat(models.Model):
+    interview = models.ForeignKey(Interview, related_name='interview', on_delete=models.CASCADE)
 
-    @property
-    def field(self):
-        return 'body'
+class Specialization(models.Model):
+    review = models.ForeignKey(Review, related_name='review', on_delete=models.CASCADE)
+    job = models.CharField(max_length=50)
