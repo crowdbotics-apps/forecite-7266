@@ -19,4 +19,4 @@ django-bootstrap4 = "~=0.0.8"
 django-allauth = "~=0.39.1"
 django-rest-auth = "~=0.9.5"
 django-extensions = "~=2.1.9"
-
+django-fontawesome-5 = "*"

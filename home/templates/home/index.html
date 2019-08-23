@@ -1,38 +1,42 @@
 
 {% extends 'base.html' %}
 {% load staticfiles %}
+{% load static %}
 {% load bootstrap4 %}
 
+{% block stylesheet %}
+<link rel="stylesheet" href={% static 'css/home.css' %} >
+{% endblock %}
+
 {% block content %}
-    <div class="jumbotron mt-5 editable" data-remote="{{ homepage.api }}" data-field="{{ homepage.field }}">
-      {{ homepage.body|safe }}
+<div id="home-hero" class="container-fluid">
+  <div class="overlay"></div>
+  <form>
+    <div class="inline-search">
+      <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> Find</button>
+      <input type="text" placeholder="Search Company Name">
     </div>
-    <div class="row mt-0 mb-5">
-        {% for package in packages %}
-            <div class="col-md-4 mt-5">
-                <div class="card">
-                  <div class="card-body text-center">
-                    <a class="card-title" href="{{package.url}}">{{package.name}}</a>
-                  </div>
-                </div>
-            </div>
-        {% endfor %}
+  </form>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <p class="lead text-center">The only review site that offers complete transparency</p>
+      <p>In sit amet condimentum felis, quis finibus sapien. Nunc felis nisi, pellentesque accumsan diam ut, accumsan porta turpis. Pellentesque maximus nec ipsum id condimentum. Integer consequat, massa eget laoreet scelerisque, sapien turpis varius urna, et tempor justo nisl eu lectus. Mauris vestibulum nibh id tortor varius, vitae dictum tortor maximus. Fusce vel dignissim turpis, a pulvinar enim. Sed imperdiet tellus ac ornare semper.</p>
     </div>
-    <div class="top-140-pad">
-        <div class="sticky pull-right">
-            <div>
-              <a href="https://www.crowdbotics.com/?ref=badge+{{customtext.title}}">
-                  <span class="badge badge-success pull-right">
-                      <div id="image" style="display:inline;">
-                        <img class="img-fluid pencil" src="{% static 'img/slack-app-pencil.png' %}" alt="Built with software packages from crowdbotics.com" height="30" width="30">
-                          </div>
-                      <div id="texts" style="display:inline; margin-left: 4px;">
-                        Made with Crowdbotics.com
-                      </div>
-                  </span>
-              </a>
-            </div>
-        </div>
+  </div>
+  <div class="row">
+    <div id="cta-boxes">
+      <div class="box">
+        <h5>Are you an Employer?</h5>
+        <p><button class="btn btn-secondary">Sign Up Today!</button></p>
+      </div>
+      <div class="box">
+        <h5>Are you a jobseeker?</h5>
+        <p><button class="btn btn-secondary">Write a Review Today!</button></p>
+      </div>
     </div>
+  </div>
+</div>
 {% endblock %}
 

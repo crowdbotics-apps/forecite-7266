@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "e9ce914ea1dad35af7fa0bf19599b9e7834ebb6739ea58e38afad7ac8c31af31"
+            "sha256": "2b7670a87a6b7fda16a9b9b1214bef0adae0f90dd8550eeacd532e815d15d442"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -74,6 +74,14 @@
             ],
             "index": "pypi",
             "version": "==2.1.9"
+        },
+        "django-fontawesome-5": {
+            "hashes": [
+                "sha256:520aa1b0efa726b205f617bafee24f0a91ff2d388b8d016da91e314c64715d3c",
+                "sha256:c7e07f43deed36de1914303014e88f993aa2a5ddae33d354281ce6c056021163"
+            ],
+            "index": "pypi",
+            "version": "==1.0.16"
         },
         "django-rest-auth": {
             "hashes": [
@@ -164,8 +172,7 @@
         "requests-oauthlib": {
             "hashes": [
                 "sha256:bd6533330e8748e94bf0b214775fed487d309b8b8fe823dc45641ebcd9a32f57",
-                "sha256:d3ed0c8f2e3bbc6b344fa63d6f933745ab394469da38db16bdddb461c7e25140",
-                "sha256:dd5a0499abfefd087c6dd96693cbd5bfd28aa009719a7f85ab3fabe3956ef19a"
+                "sha256:d3ed0c8f2e3bbc6b344fa63d6f933745ab394469da38db16bdddb461c7e25140"
             ],
             "version": "==1.2.0"
         },

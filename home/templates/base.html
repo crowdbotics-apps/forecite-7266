@@ -1,5 +1,7 @@
 
 {% load staticfiles %}
+{% load static %}
+{% load fontawesome_5 %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -10,44 +12,102 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/css/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/css/themes/tim.css" type="text/css" media="screen" charset="utf-8">
+    {% fontawesome_5_static %} 
     <link rel="stylesheet" href={% static 'css/main.css' %} >
+    {% block stylesheet %}
+    {% endblock %}
 
     <title>{{ customtext.title|striptags }}</title>
   </head>
   <body>
-    <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <a class="navbar-brand editable" data-remote="{{ customtext.api }}" data-field="{{ customtext.field }}" href="/">
-              {{ customtext.title|safe }}
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="nav navbar-nav ml-auto">
-                    {% if not user.is_authenticated %}
+    <header>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand editable" href="/">
+                    <img width="120" src="{% static 'img/logo.png' %}">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav ml-auto">
+                        {% if not user.is_authenticated %}
+                            <!-- <li class="nav-item">
+                              <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="{% url 'account_signup' %}">Sign Up</a>
+                            </li> -->
+                        {% else %}
+                            <!-- <li class="nav-item">
+                              <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                            </li> -->
+                        {% endif %}
                         <li class="nav-item">
-                          <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                            <a class="nav-link" href="#">About</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="{% url 'account_signup' %}">Sign Up</a>
+                            <a class="nav-link" href="#">Companies</a>
                         </li>
-                    {% else %}
                         <li class="nav-item">
-                          <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                            <a class="nav-link" href="#">Employers</a>
                         </li>
-                    {% endif %}
-                </ul>
-            </div>
-        </nav>
-        {% if user.is_superuser %}
-            <span class="btn btn-success top-right" id="editor" title="Change to inline editor">Edit</span>
-        {% endif %}
+                        <li class="nav-item">
+                            <a class="nav-link review btn btn-primary" href="#">Write a Review</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            {% if user.is_superuser %}
+                <span class="btn btn-success top-right" id="editor" title="Change to inline editor">Edit</span>
+            {% endif %}
+        </div>
+    </header>
+
+    <main>
         {% block content %}
         {% endblock %}
-    </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mt-5 mb-5">
+                    <ul class="links">
+                        <li><a href="#">Content Guidelines</a></li>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mt-5 mb-5">
+                    <ul class="links">
+                        <li><a href="#">About Forecite</a></li>
+                        <li><a href="#">Team</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mt-5 mb-5">
+                    <ul class="links">
+                        <li><a href="#">Claim your Company Page</a></li>
+                        <li><a href="#">Write a Review</a></li>
+                        <li><a href="#">Company Reviews</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <a class="social" href="#"><i class="fab fa-facebook"></i></a>
+                    <a class="social" href="#"><i class="fab fa-twitter"></i></a>
+                    <a class="social" href="#"><i class="fab fa-instagram"></i></a>
+                    <a class="social" href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <div class="col-12 text-center mt-2">
+                    <small>Copyright (C) 2019, Davis & Company dba Forecite, "Forecite" and logo are proprietary trademarks of Davis & Co.</small>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -57,53 +117,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/js/medium-editor.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-
-    <script>
-        $('#editor').on('click', function (e) {
-            if (e.target.innerText === 'Edit'){
-                e.target.innerText = 'Cancel';
-                var editor = new MediumEditor('.editable');
-                editor.subscribe('editableBlur', function (event, editable) {
-                    var url = editable.dataset.remote;
-                    var field = editable.dataset.field;
-                    var data = {};
-                    data[field] = editable.innerHTML;
-                    api_call(url, data);
-                });
-            } else {
-                e.target.innerText = 'Edit';
-                window._mediumEditors.forEach(function (editor) {
-                    if (editor)
-                        editor.destroy();
-                })
-            }
-        });
-
-        function api_call(url, data, method='PATCH'){
-            $.ajax({
-                type: method,
-                url: url,
-                data: data,
-                dataType: 'json',
-                headers: {
-                    'X-CSRFToken': $.cookie('csrftoken')
-                },
-                success: function (response) {
-                    toastr.success('Update Successful')
-                },
-                error: function (response) {
-                    toastr.error('Update Unsuccessful')
-                }
-            });
-        }
-        toastr.options = {
-          "positionClass": "toast-bottom-right",
-          "fadeIn": 300,
-          "fadeOut": 800,
-          "timeOut": 2000,
-          "extendedTimeOut": 1000
-        }
-    </script>
+    {% block scripts %}
+    {% endblock %}
   </body>
 </html>
 
