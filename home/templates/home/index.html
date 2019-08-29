@@ -5,11 +5,15 @@
 {% load bootstrap4 %}
 
 {% block stylesheet %}
+<!-- Add the slick-theme.css if you want default styling -->
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css"/>
+<!-- Add the slick-theme.css if you want default styling -->
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css"/>
 <link rel="stylesheet" href="{% static 'css/home.css' %}">
 {% endblock %}
 
 {% block content %}
-<div class="container_part">
+<div id="what-makes-different" class="container_part">
     <img src="{% static 'img/back2.png' %}" class="back" />
     <div class="container second_content">
         <div class="col-md-9">
@@ -18,60 +22,76 @@
         </div>
         <div class="row">
             <div class="col-md-3 grid_item">
+              <a href="#">
                 <div class="icon">
                     <img src="{% static 'img/icon1.png' %}" />
                 </div>
                 <h3>Assessments on Diversity, equity and inclusion initiatives</h3>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+              </a>
             </div>
             <div class="col-md-3 grid_item">
+              <a href="#">
                 <div class="icon">
                     <img src="{% static 'img/icon2.png' %}" />
                 </div>
                 <h3>Leadership and Culture</h3>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+              </a>
             </div>
             <div class="col-md-3 grid_item">
+              <a href="#">
                 <div class="icon">
                     <img src="{% static 'img/icon3.png' %}" />
                 </div>
                 <h3>Age</h3>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+              </a>
             </div>
-            <div class="col-md-3 grid_item active">
+            <div class="col-md-3 grid_item">
+              <a href="#">
                 <div class="icon">
                     <img src="{% static 'img/icon4.png' %}" />
                 </div>
                 <h3>Gender</h3>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+              </a>
             </div>
             <div class="col-md-3 grid_item">
+              <a href="#">
                 <div class="icon">
                     <img src="{% static 'img/icon5.png' %}" />
                 </div>
                 <h3>Ethnic and Racial Background</h3>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+              </a>
             </div>
             <div class="col-md-3 grid_item">
+              <a href="#">
                 <div class="icon">
                     <img src="{% static 'img/icon6.png' %}" />
                 </div>
                 <h3>Salary</h3>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+              </a>
             </div>
             <div class="col-md-3 grid_item">
+              <a href="#">
                 <div class="icon">
                     <img src="{% static 'img/icon7.png' %}" />
                 </div>
                 <h3>Number of years of experience</h3>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+              </a>
             </div>
             <div class="col-md-3 grid_item">
+              <a href="#">
                 <div class="icon">
                     <img src="{% static 'img/icon8.png' %}" />
                 </div>
                 <h3>Educational attainment</h3>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+              </a>
             </div>
         </div>
     </div>
@@ -83,7 +103,97 @@
     </div>
 </div>
 <div class="carousel">
-
+  <div class="container">
+    <div class="row">
+      <div class="col-12 testimonial-headline">
+        <h5>What people like you<br>are saying about</h5>
+      </div>
+    </div>
+  </div>
+  <div id="slider">
+    <div class="slide">
+      <div class="primary">
+        <div class="avatar">
+          <img src="{% static 'img/p1.png' %}" />
+        </div>
+        <div class="name-and-title">
+          <span class="name">Nataly Nary</span>
+          <span class="title">Head of fund groups</span>
+        </div>
+      </div>
+      <p class="desc">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium </p>
+    </div>
+    <div class="slide">
+      <div class="primary">
+        <div class="avatar">
+          <img src="{% static 'img/p2.png' %}" />
+        </div>
+        <div class="name-and-title">
+          <span class="name">Nataly Nary</span>
+          <span class="title">Head of fund groups</span>
+        </div>
+      </div>
+      <p class="desc">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium </p>
+    </div>
+    <div class="slide">
+      <div class="primary">
+        <div class="avatar">
+          <img src="{% static 'img/p3.png' %}" />
+        </div>
+        <div class="name-and-title">
+          <span class="name">Nataly Nary</span>
+          <span class="title">Head of fund groups</span>
+        </div>
+      </div>
+      <p class="desc">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium </p>
+    </div>
+    <div class="slide">
+      <div class="primary">
+        <div class="avatar">
+          <img src="{% static 'img/p4.png' %}" />
+        </div>
+        <div class="name-and-title">
+          <span class="name">Nataly Nary</span>
+          <span class="title">Head of fund groups</span>
+        </div>
+      </div>
+      <p class="desc">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium </p>
+    </div>
+    <div class="slide">
+      <div class="primary">
+        <div class="avatar">
+          <img src="{% static 'img/p5.png' %}" />
+        </div>
+        <div class="name-and-title">
+          <span class="name">Nataly Nary</span>
+          <span class="title">Head of fund groups</span>
+        </div>
+      </div>
+      <p class="desc">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium </p>
+    </div>
+    <div class="slide">
+      <div class="primary">
+        <div class="avatar">
+          <img src="{% static 'img/p6.png' %}" />
+        </div>
+        <div class="name-and-title">
+          <span class="name">Nataly Nary</span>
+          <span class="title">Head of fund groups</span>
+        </div>
+      </div>
+      <p class="desc">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium </p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="slider-buttons">
+          <button class="prev arrow"><i class="fa fa-angle-left"></i></button>
+          <button class="next arrow"><i class="fa fa-angle-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 <div class="companies_list container">
     <h1 class="col-md-9">Companies that trust in Forecite</h1>
@@ -102,3 +212,26 @@
 </div>
 {% endblock %}
 
+{% block scripts %}
+<script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('.down-but').click(function() {
+      $([document.documentElement, document.body]).animate({
+        scrollTop: $("#what-makes-different").offset().top
+      }, 1000);
+    })
+    window.slider = $('.carousel #slider').slick({
+      dots: false,
+      slidesToShow: 3,
+      slidesToScroll: 1
+    });
+    $('.slider-buttons .prev').click(function() {
+      slider.slick('slickPrev');
+    });
+    $('.slider-buttons .next').click(function() {
+      slider.slick('slickNext');
+    });
+  });
+</script>
+{% endblock %}

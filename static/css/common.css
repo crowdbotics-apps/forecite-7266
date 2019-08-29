@@ -54,3 +54,97 @@ p{
 .clear{
     clear:both;
 }
+
+
+.footer{
+    position: relative;
+    margin-top: 100px;
+}
+
+.footer img.back{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.review_form{
+    background: #fff;
+    box-shadow: -1px 25px 20px #f2f2f2;
+    margin: auto;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.review_form h1{
+    font-size: 35px;
+    color: #324148;
+}
+
+.review_form h1 span{
+    color: #A653A0;
+}
+
+.review_form .btn{
+    background: #A653A0;
+    color: #fff;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.footer-menu{
+    color: #324148;
+    padding-bottom: 50px;
+}
+
+.footer-menu .footer_logo img{
+    margin-bottom: 20px;
+}
+
+.footer-menu h3{
+    margin-bottom: 20px;
+}
+
+.footer-menu p{
+    line-height: 32px;
+}
+
+.footer-menu .social_icons{
+    display: flex;
+}
+
+.footer-menu .social_icons .icon{
+    background: #A653A0;
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255,255,255,0.6);
+    font-size: 15px;
+    margin-right: 7px;
+}
+
+.footer-menu .links{
+    display: flex;
+}
+
+.footer-menu ul{
+    padding: 0;
+    margin-right: 30px;
+}
+
+.footer-menu .links ul li{
+    display: block;
+    margin-bottom: 5px;
+}
+
+.footer-menu .links ul li svg{
+    margin-right: 10px;
+}
