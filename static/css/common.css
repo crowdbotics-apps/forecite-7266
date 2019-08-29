@@ -1,0 +1,56 @@
+body{
+    font-family: 'Rubik', sans-serif;
+    color: #fff;
+    background: #fff;
+}
+h1{
+    font-family: 'DM Serif Display', serif;
+    font-size: 45px;
+}
+h3{
+    font-size: 18px;
+    font-weight: 700;
+}
+p{
+    font-size: 18px;
+    font-weight: 400;
+}
+.header{
+    position: absolute;
+    top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .navbar ul li{
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.header .navbar ul li.active a{
+    color: #A653A0;
+}
+
+.header .navbar ul li a{
+    color: #324148;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.header .navbar ul li.signupbut a{
+    background: #A653A0;
+    color: #fff;
+    padding: 10px 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.header .navbar ul li.signupbut a img{
+    margin-right: 5px;
+}
+
+.clear{
+    clear:both;
+}

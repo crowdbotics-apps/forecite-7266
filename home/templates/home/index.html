@@ -5,38 +5,100 @@
 {% load bootstrap4 %}
 
 {% block stylesheet %}
-<link rel="stylesheet" href={% static 'css/home.css' %} >
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
 {% endblock %}
 
 {% block content %}
-<div id="home-hero" class="container-fluid">
-  <div class="overlay"></div>
-  <form>
-    <div class="inline-search">
-      <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> Find</button>
-      <input type="text" placeholder="Search Company Name">
+<div class="container_part">
+    <img src="{% static 'img/back2.png' %}" class="back" />
+    <div class="container second_content">
+        <div class="col-md-9">
+            <h1>What makes Forecite different?</h1>
+            <p>Our reviews rate companies from the perspective of people of color with more data on the reviews experience and background.</p>
+        </div>
+        <div class="row">
+            <div class="col-md-3 grid_item">
+                <div class="icon">
+                    <img src="{% static 'img/icon1.png' %}" />
+                </div>
+                <h3>Assessments on Diversity, equity and inclusion initiatives</h3>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+            </div>
+            <div class="col-md-3 grid_item">
+                <div class="icon">
+                    <img src="{% static 'img/icon2.png' %}" />
+                </div>
+                <h3>Leadership and Culture</h3>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+            </div>
+            <div class="col-md-3 grid_item">
+                <div class="icon">
+                    <img src="{% static 'img/icon3.png' %}" />
+                </div>
+                <h3>Age</h3>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+            </div>
+            <div class="col-md-3 grid_item active">
+                <div class="icon">
+                    <img src="{% static 'img/icon4.png' %}" />
+                </div>
+                <h3>Gender</h3>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+            </div>
+            <div class="col-md-3 grid_item">
+                <div class="icon">
+                    <img src="{% static 'img/icon5.png' %}" />
+                </div>
+                <h3>Ethnic and Racial Background</h3>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+            </div>
+            <div class="col-md-3 grid_item">
+                <div class="icon">
+                    <img src="{% static 'img/icon6.png' %}" />
+                </div>
+                <h3>Salary</h3>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+            </div>
+            <div class="col-md-3 grid_item">
+                <div class="icon">
+                    <img src="{% static 'img/icon7.png' %}" />
+                </div>
+                <h3>Number of years of experience</h3>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+            </div>
+            <div class="col-md-3 grid_item">
+                <div class="icon">
+                    <img src="{% static 'img/icon8.png' %}" />
+                </div>
+                <h3>Educational attainment</h3>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+            </div>
+        </div>
     </div>
-  </form>
 </div>
-<div class="container">
-  <div class="row">
-    <div class="col-12">
-      <p class="lead text-center">The only review site that offers complete transparency</p>
-      <p>In sit amet condimentum felis, quis finibus sapien. Nunc felis nisi, pellentesque accumsan diam ut, accumsan porta turpis. Pellentesque maximus nec ipsum id condimentum. Integer consequat, massa eget laoreet scelerisque, sapien turpis varius urna, et tempor justo nisl eu lectus. Mauris vestibulum nibh id tortor varius, vitae dictum tortor maximus. Fusce vel dignissim turpis, a pulvinar enim. Sed imperdiet tellus ac ornare semper.</p>
+<div class="workwithus">
+    <div class="container">
+        <h1>Looking for diverse talent? Become a Forecite Partner</h1>
+        <input type="button" class="btn" value="Work with us" />
     </div>
-  </div>
-  <div class="row">
-    <div id="cta-boxes">
-      <div class="box">
-        <h5>Are you an Employer?</h5>
-        <p><button class="btn btn-secondary">Sign Up Today!</button></p>
-      </div>
-      <div class="box">
-        <h5>Are you a jobseeker?</h5>
-        <p><button class="btn btn-secondary">Write a Review Today!</button></p>
-      </div>
+</div>
+<div class="carousel">
+
+</div>
+<div class="companies_list container">
+    <h1 class="col-md-9">Companies that trust in Forecite</h1>
+    <p class="col-md-9">Autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur</p>
+    <div class="image_list">
+        <img src="{% static 'img/company1.png' %}" />
+        <img src="{% static 'img/company2.png' %}" />
+        <img src="{% static 'img/company3.png' %}" />
+        <img src="{% static 'img/company4.png' %}" />
+        <img src="{% static 'img/company5.png' %}" />
+        <img src="{% static 'img/company6.png' %}" />
+        <img src="{% static 'img/company7.png' %}" />
+        <img src="{% static 'img/company8.png' %}" />
+        <img src="{% static 'img/company9.png' %}" />
     </div>
-  </div>
 </div>
 {% endblock %}
 

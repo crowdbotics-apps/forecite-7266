@@ -1,124 +1,107 @@
-
 {% load staticfiles %}
 {% load static %}
 {% load fontawesome_5 %}
+{% load bootstrap4 %}
 <!doctype html>
 <html lang="en">
   <head>
+    <title>Forecite</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    {% fontawesome_5_static %} 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
-    {% fontawesome_5_static %} 
-    <link rel="stylesheet" href={% static 'css/main.css' %} >
+    <link href="https://fonts.googleapis.com/css?family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/common.css' %}">
+
     {% block stylesheet %}
     {% endblock %}
 
-    <title>{{ customtext.title|striptags }}</title>
   </head>
   <body>
-    <header>
-        <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand editable" href="/">
-                    <img width="120" src="{% static 'img/logo.png' %}">
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="nav navbar-nav ml-auto">
-                        {% if not user.is_authenticated %}
-                            <!-- <li class="nav-item">
-                              <a class="nav-link" href="{% url 'account_login' %}">Login</a>
-                            </li>
-                            <li class="nav-item">
-                              <a class="nav-link" href="{% url 'account_signup' %}">Sign Up</a>
-                            </li> -->
-                        {% else %}
-                            <!-- <li class="nav-item">
-                              <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
-                            </li> -->
-                        {% endif %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Companies</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Employers</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link review btn btn-primary" href="#">Write a Review</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-            {% if user.is_superuser %}
-                <span class="btn btn-success top-right" id="editor" title="Change to inline editor">Edit</span>
-            {% endif %}
-        </div>
-    </header>
-
-    <main>
-        {% block content %}
-        {% endblock %}
-    </main>
-
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 mt-5 mb-5">
-                    <ul class="links">
-                        <li><a href="#">Content Guidelines</a></li>
-                        <li><a href="#">Terms of Use</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4 mt-5 mb-5">
-                    <ul class="links">
-                        <li><a href="#">About Forecite</a></li>
-                        <li><a href="#">Team</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Press</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4 mt-5 mb-5">
-                    <ul class="links">
-                        <li><a href="#">Claim your Company Page</a></li>
-                        <li><a href="#">Write a Review</a></li>
-                        <li><a href="#">Company Reviews</a></li>
-                    </ul>
-                </div>
+    <div class="container_part">
+        <img src="{% static 'img/back1.png' %}" class="back" />
+        <div class="header container">
+            <img src="{% static 'img/logo.png' %}" class="logo" />
+            <div class="navbar">
+                <ul>
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">Companies</a></li>
+                    <li><a href="#">Employers</a></li>
+                    <li><a href="#">Career advice</a></li>
+                    <li><a href="#">Submit a review</a></li>
+                    <li class="signupbut"><a href="#"><img src="{% static 'img/user_icon.png' %}" />Sign Up</a></li>
+                </ul>
             </div>
-            <div class="row mt-4">
-                <div class="col-12 text-center">
-                    <a class="social" href="#"><i class="fab fa-facebook"></i></a>
-                    <a class="social" href="#"><i class="fab fa-twitter"></i></a>
-                    <a class="social" href="#"><i class="fab fa-instagram"></i></a>
-                    <a class="social" href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <div class="slide_content container">
+            <div class="col-md-5 right-text">
+                <h1>Find the right work environment for you</h1>
+                <p>How do people really feel. Honest reviews on company’s diversity, equity and inclusion initiatives. Is it the right fit for you?</p>
+            </div>
+            <div class="clear"></div>
+            <div class="col-md-9 subscription">
+                <input type="text" class="subscription_text form-control" placeholder="Search company name" />
+                <input type="button" value="Find" class="btn" />
+            </div>
+        </div>
+        <div class="down-but"><i class="fa fa-angle-down"></i></div>
+    </div>
+    {% block content %}
+    {% endblock %}
+    <div class="footer">
+        <img src="{% static 'img/bottom_image.png' %}" class="back" />
+        <div class="container">
+            <div class="review_form col-md-9">
+                <h1><span>Career insights</span> to give you Forecite.</h1>
+                <input type="button" class="btn" value="Submit a review" />
+            </div>
+            <div class="footer-menu row">
+                <div class="col-md-4">
+                    <div class="footer_logo">
+                        <img src="{% static 'img/logo.png' }" />
+                        <p>Autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.</p>
+                        <div class="social_icons">
+                            <div class="icon"><i class="fab fa-facebook-f"></i></div>
+                            <div class="icon"><i class="fab fa-linkedin-in"></i></div>
+                            <div class="icon"><i class="fab fa-twitter"></i></div>
+                            <div class="icon"><i class="fab fa-instagram"></i></div>
+                            <div class="icon"><i class="fab fa-youtube"></i></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-12 text-center mt-2">
-                    <small>Copyright (C) 2019, Davis & Company dba Forecite, "Forecite" and logo are proprietary trademarks of Davis & Co.</small>
+                <div class="col-md-4">
+                    <h3>Useful links</h3>
+                    <div class="links">
+                        <ul class="col-md-6">
+                            <li><i class="fa fa-caret-right"></i>About us</li>
+                            <li><i class="fa fa-caret-right"></i>Press</li>
+                            <li><i class="fa fa-caret-right"></i>Contact</li>
+                            <li><i class="fa fa-caret-right"></i>Work with us</li>
+                        </ul>
+                        <ul class="col-md-6">
+                            <li><i class="fa fa-caret-right"></i>Privacy</li>
+                            <li><i class="fa fa-caret-right"></i>Terms</li>
+                            <li><i class="fa fa-caret-right"></i>Guidelines</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h3>Contacts</h3>
+                    <p>The city<br>Address: 2545 PTY Causeway<br>Phone: 584125217262<br>Email: yourmail@forecite.com</p>
                 </div>
             </div>
         </div>
-    </footer>
+    </div>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/js/medium-editor.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <!-- Javascripts -->    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
     {% block scripts %}
     {% endblock %}
   </body>
 </html>
-
